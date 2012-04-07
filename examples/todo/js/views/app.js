@@ -49,6 +49,7 @@ define([
       this.$('#todo-stats').html(this.statsTemplate({
         total:      Todos.length,
         done:       done,
+        remaining:  remaining,
         singleRemaining:  remaining == 1
       }));
 
