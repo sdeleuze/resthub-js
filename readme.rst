@@ -5,7 +5,6 @@ RESThub.js 2.0 is a Javascript stack based on :
  * `Backbone.js <http://documentcloud.github.com/backbone/>`_
  * `Underscore.js <http://documentcloud.github.com/underscore/>`_
  * `Handlebars.js <http://handlebarsjs.com/>`_
- * `Require.js Handlebars plugin <https://github.com/SlexAxton/require-handlebars-plugin>`_
  * `json2.js <https://github.com/douglascrockford/JSON-js>`_
  * `Grunt build tool <https://github.com/cowboy/grunt.git>`_
 
