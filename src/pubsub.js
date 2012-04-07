@@ -9,12 +9,12 @@
  * Dual licensed under the MIT and GPL licenses.
  * http://benalman.com/about/license/
  */
-define(['underscore'], function() {
+define(['jquery'], function($) {
 
 	/**
 	 * Stores event handlers
 	 */
-	_._pubsubRootListener = {};
+	Pubsub.rootListener = {};
 
 	/**
 	 * Define an event handler for this eventType listening on the event bus
@@ -25,7 +25,7 @@ define(['underscore'], function() {
 	 * 
 	 * @return Handle used to unsubribe.
 	 */
-	_.subscribe = function(type, callback) {
+	Pubsub.subscribe = function(type, callback) {
 		// Creates an event source
 		var listener = $({});
 		// Binds the callback to the eventsource
@@ -35,7 +35,7 @@ define(['underscore'], function() {
 		});
 		// Creates, stores and returns a handle.
 		var handle = ""+parseInt(Math.random()*1000000000);
-		$._pubsubRootListener[handle] = listener;
+		Pubsub.rootListener[handle] = listener;
 		return handle;
 	};
 
@@ -44,10 +44,10 @@ define(['underscore'], function() {
 	 * 
 	 * @param {String} handle The handle returned by the $.subscribe() function
 	 */
-	_.unsubscribe = function(handle) {
-		if(handle in $._pubsubRootListener) {
-			$._pubsubRootListener[handle].unbind();
-			delete($._pubsubRootListener[handle]);
+	Pubsub.unsubscribe = function(handle) {
+		if(handle in Pubsub.rootListener) {
+			Pubsub.rootListener[handle].unbind();
+			delete(Pubsub.rootListener[handle]);
 		}
 	};
 
@@ -57,10 +57,12 @@ define(['underscore'], function() {
 	 * @param {String} type A string that identify your custom javaScript event type
 	 * @param {Array} data  Parameters to pass along to the event handler
 	 */
-	_.publish = function(type, data) {
-		for(var handle in $._pubsubRootListener) {
-			$._pubsubRootListener[handle].trigger(type, data);
+	Pubsub.publish = function(type, data) {
+		for(var handle in Pubsub.rootListener) {
+			Pubsub.rootListener[handle].trigger(type, data);
 		}
 	};
+
+	return Pubsub;
 
 });
