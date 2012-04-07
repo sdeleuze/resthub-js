@@ -9,6 +9,7 @@ require.config({
     backbone: '../../../src/backbone',
     text: '../../../src/text',
     localstorage: '../../../src/localstorage',
+    handlebars: '../../../src/handlebars'
   }
 
 });
