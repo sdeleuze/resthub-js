@@ -6,6 +6,6 @@
     {[ } ]}
     {[ if (done) { ]}
         <span class="todo-clear">
-          <a href="#">{{ remaining == 1 ? messages.clearitem : _.sprintf(messages.clearitems, done) }}</a>
+          <a href="#">{{ done == 1 ? messages.clearitem : _.sprintf(messages.clearitems, done) }}</a>
         </span>
     {[ } ]}
