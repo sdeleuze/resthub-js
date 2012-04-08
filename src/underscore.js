@@ -885,11 +885,10 @@
     return prefix ? prefix + id : id;
   };
 
-  // By default, Underscore uses ERB-style template delimiters, change the
-  // following template settings to use alternative delimiters.
+  // RESThub.js inline patch : mustache like syntax intead of ERB like syntax
   _.templateSettings = {
-    evaluate    : /<%([\s\S]+?)%>/g,
-    interpolate : /<%=([\s\S]+?)%>/g,
+    evaluate : /\{\[([\s\S]+?)\]\}/g,
+    interpolate : /\{\{([\s\S]+?)\}\}/g,
     escape      : /<%-([\s\S]+?)%>/g
   };
 

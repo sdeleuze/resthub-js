@@ -3,6 +3,7 @@
 target
 .settings
 .DS_Store
+_build
 resthub-js/src/main/webapp/WEB-INF/web.xml
 src/META-INF/MANIFEST.MF
 src/lib/resthub.min.js

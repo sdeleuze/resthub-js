@@ -1,3 +1,11 @@
+Welcome to RESThub.js documentation!
+====================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
 RESThub.js 2.0 is a Javascript stack based on :
  * `Require.js <http://requirejs.org/>`_
  * `jQuery <http://jquery.com/>`_
@@ -5,6 +13,8 @@ RESThub.js 2.0 is a Javascript stack based on :
  * `Backbone.js <http://documentcloud.github.com/backbone/>`_
  * `Underscore.js <http://documentcloud.github.com/underscore/>`_
  * `Underscore.string <https://github.com/epeli/underscore.string/>`_
+ * `Handlebars.js <http://handlebarsjs.com/>`_
+ * `json2.js <https://github.com/douglascrockford/JSON-js>`_
  * `Grunt build tool <https://github.com/cowboy/grunt.git>`_
 
 It also provides the following functionalities :
@@ -12,3 +22,12 @@ It also provides the following functionalities :
  * A simple but powerfull pub/sub mecanism
  * An `OAuth2 <http://tools.ietf.org/html/draft-ietf-oauth-v2>`_ client
  * Some Grunt scafolding plugins
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

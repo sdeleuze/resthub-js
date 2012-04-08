@@ -12,7 +12,16 @@
     factory(root, exports, require('underscore'));
   } else if (typeof define === 'function' && define.amd) {
     // AMD
-    define(['underscore', 'jquery', 'exports'], function(_, $, exports) {
+// ****************************************************************************************************
+// Beginning of RESThub.js customization, in order to load underscore.string and merge it in underscore
+// ****************************************************************************************************
+    define(['underscore', 'underscore.string', 'jquery', 'exports'], function(_, _s, $, exports) {
+      _.str = _s;
+      _.mixin(_.str.exports());
+      _.str.include('Underscore.string', 'string');
+// ****************************************************************************************************
+// End of RESThub.js customization
+// ****************************************************************************************************
       // Export global even in AMD case in case this script is loaded with
       // others that may still expect a global Backbone.
       root.Backbone = factory(root, exports, _, $);

@@ -1,12 +1,12 @@
 define([
   'jquery',
-  'underscore', 
+  'underscore',
   'backbone',
   'collections/todos',
   'views/todos',
-  'handlebars',
-  'text!templates/stats.html'
-  ], function($, _, Backbone, Todos, TodoView, Handlebars, statsTemplate){
+  'i18n!nls/messages',
+  'text!templates/stats.html',
+  ], function($, _, Backbone, Todos, TodoView, messages, statsTemplate){
   var AppView = Backbone.View.extend({
 
     // Instead of generating a new element, bind to the existing skeleton of
@@ -14,7 +14,7 @@ define([
     el: $("#todoapp"),
 
     // Our template for the line of statistics at the bottom of the app.
-    statsTemplate: Handlebars.compile(statsTemplate),
+    statsTemplate: _.template(statsTemplate),
 
     // Delegated events for creating new items, and clearing completed ones.
     events: {
@@ -47,10 +47,10 @@ define([
       var remaining = Todos.remaining().length;
 
       this.$('#todo-stats').html(this.statsTemplate({
-        total:      Todos.length,
-        done:       done,
-        remaining:  remaining,
-        singleRemaining:  remaining == 1
+        total:            Todos.length,
+        done:             done,
+        remaining:        remaining,
+        messages:         messages
       }));
 
       this.allCheckbox.checked = !remaining;

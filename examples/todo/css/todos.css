@@ -199,6 +199,14 @@ body {
 	color: #336699;
 }
 
+#locales {
+	float: right;
+}
+
+#locales a {
+	color: #888888;
+}
+
 #credits {
 	width: 520px;
 	margin: 30px auto;

@@ -1,17 +1,16 @@
 define([
   'jquery', 
-  'underscore', 
+  'underscore',
   'backbone',
-  'handlebars',
   'text!templates/todos.html'
-  ], function($, _, Backbone, Handlebars, todosTemplate){
+  ], function($, _, Backbone, todosTemplate){
   var TodoView = Backbone.View.extend({
 
     //... is a list tag.
     tagName:  "li",
 
     // Cache the template function for a single item.
-    template: Handlebars.compile(todosTemplate),
+    template: _.template(todosTemplate),
 
     // The DOM events specific to an item.
     events: {
