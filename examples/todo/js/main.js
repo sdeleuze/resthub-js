@@ -16,8 +16,9 @@ require.config({
 
 });
 
-require(['backbone', 'views/app', 'router'], function(Backbone, AppView, AppRouter){
+require(['backbone', 'views/app', 'views/credits', 'router'], function(Backbone, AppView, CreditsView, AppRouter){
   var appView = new AppView;
+  var creditsView = new CreditsView;
   var appRouter = new AppRouter;
   Backbone.history.start();
 });

@@ -5,8 +5,9 @@ define([
   'collections/todos',
   'views/todos',
   'i18n!nls/messages',
-  'text!templates/stats.html',
-  ], function($, _, Backbone, Todos, TodoView, messages, statsTemplate){
+  'text!templates/app.html',
+  'text!templates/stats.html'
+  ], function($, _, Backbone, Todos, TodoView, messages, appTemplate, statsTemplate){
   var AppView = Backbone.View.extend({
 
     // Instead of generating a new element, bind to the existing skeleton of
@@ -14,6 +15,7 @@ define([
     el: $("#todoapp"),
 
     // Our template for the line of statistics at the bottom of the app.
+    appTemplate: _.template(appTemplate),
     statsTemplate: _.template(statsTemplate),
 
     // Delegated events for creating new items, and clearing completed ones.
@@ -31,11 +33,13 @@ define([
       _.bindAll(this, 'addOne', 'addAll', 'render', 'toggleAllComplete');
 
       this.input    = this.$("#new-todo");
-      this.allCheckbox = this.$(".mark-all-done")[0];
 
       Todos.bind('add',     this.addOne);
       Todos.bind('reset',   this.addAll);
       Todos.bind('all',     this.render);
+      
+      this.$('.content').html(this.appTemplate({messages: messages}));
+      this.allCheckbox = this.$(".mark-all-done")[0];
 
       Todos.fetch();
     },

@@ -1,11 +1,11 @@
-    {[ if (total) { ]}
-        <span class="todo-count">
-          <span class="number">{{ remaining }}</span>
-          <span class="word">{{ remaining == 1 ? messages.item : messages.items }}</span> {{ remaining == 1 ? messages.left : messages.lefts }}.
-        </span>
-    {[ } ]}
-    {[ if (done) { ]}
-        <span class="todo-clear">
-          <a href="#">{{ done == 1 ? messages.clearitem : _.sprintf(messages.clearitems, done) }}</a>
-        </span>
-    {[ } ]}
+{[ if (total) { ]}
+  <span class="todo-count">
+    <span class="number">{{ remaining }}</span>
+    <span class="word">{{ remaining == 1 ? messages.item : messages.items }}</span> {{ remaining == 1 ? messages.left : messages.lefts }}.
+  </span>
+{[ } ]}
+{[ if (done) { ]}
+    <span class="todo-clear">
+      <a href="#">{{ done == 1 ? messages.clearitem : _.sprintf(messages.clearitems, done) }}</a>
+    </span>
+{[ } ]}

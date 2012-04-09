@@ -5,7 +5,12 @@ define({
         "left" : "left",
         "lefts" 	: "left",
         "clearitem"	: "Clear the completed item",
-        "clearitems"	: "Clear %s completed items"
+        "clearitems"	: "Clear %s completed items",
+        "originallyby"	: "Originally by",
+        "modularizedby"	: "Modularized by",
+        "i18nby"		: "Internationalization by",
+        "tobedone"      : "What needs to be done?",
+        "markall"       : "Mark all as complete"
     },
     "fr-fr": true
 });
